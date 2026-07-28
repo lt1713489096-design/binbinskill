@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.2",
+  "project_id": "P001",
+  "title": "未命名漫剧项目",
+  "aspect_ratio": "9:16",
+  "target_duration_s": 8.0,
+  "platform": "neutral",
+  "platform_profile": {
+    "last_verified": null,
+    "max_clip_duration_s": null,
+    "notes": "未指定平台，保持平台中立"
+  },
+  "immutable_facts": [],
+  "assumptions": [],
+  "source_dialogue": [
+    {
+      "id": "D001",
+      "speaker": "角色A",
+      "text": "示例台词",
+      "preserve": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "A-CHAR-01",
+      "type": "character",
+      "name": "角色A",
+      "source": "文字设定",
+      "primary_role": "identity",
+      "hard_locks": ["身份", "基础造型"],
+      "variable_fields": ["表情", "姿势"],
+      "valid_range": "全片",
+      "forbidden_transfer": []
+    }
+  ],
+  "beats": [
+    {
+      "id": "B01",
+      "goal": "角色A获得答案",
+      "obstacle": "对方回避",
+      "attempt": "角色A出示证据",
+      "expected_result": "对方承认",
+      "actual_result": "对方沉默",
+      "value_change": "怀疑转为确认",
+      "plot_pace": "中",
+      "emotion_pace": "重",
+      "budget_s": 8.0
+    }
+  ],
+  "shots": [
+    {
+      "id": "S01",
+      "beat_id": "B01",
+      "duration_s": 8.0,
+      "visual_task": "静音时看懂证据迫使对方停止回避",
+      "director_intent": "让沉默成为确认",
+      "viewpoint_type": "客观观察视角",
+      "viewpoint_owner": "中性叙事观察者",
+      "camera_story_identity": "不属于故事人物的摄影机",
+      "gaze_target": "B看向桌上证据，不看镜头",
+      "viewpoint_evidence": "双人构图与稳定对话轴线证明客观观察位置",
+      "shot_design": "双人中近景，证据位于两人之间",
+      "blocking_axis": "A在画面左，B在画面右，保持对话轴线",
+      "primary_action": "A把证据推到B面前，B的手停住",
+      "camera_move": "固定",
+      "start_state": "证据在A手边，B仍回避",
+      "end_state": "证据停在B面前，B停止动作",
+      "entry_anchor": "A的手触碰证据",
+      "exit_anchor": "B静止的手",
+      "asset_ids": ["A-CHAR-01"],
+      "dialogue_ids": ["D001"]
+    }
+  ],
+  "clips": [
+    {
+      "id": "C01",
+      "shot_ids": ["S01"],
+      "mode": "image-to-video",
+      "duration_s": 8.0,
+      "must_happen": "A推出证据，B停止回避动作",
+      "must_not_happen": "B不得在本片段内离开或开始下一节拍",
+      "reference_schedule": [
+        {
+          "asset_id": "A-CHAR-01",
+          "role": "角色身份",
+          "active_range": "0.0-8.0s",
+          "must_transfer": ["身份", "基础造型"],
+          "allowed_change": ["表情", "姿势"],
+          "forbidden_transfer": []
+        }
+      ],
+      "timeline": [
+        {
+          "range": "0.0-8.0s",
+          "shot_id": "S01",
+          "subject_space": "A与B在桌边，证据位于A手边",
+          "action_phase": "准备：A触碰证据；执行：推到B面前；落定：B的手停住",
+          "viewpoint_camera": "客观双人中近景，固定机位",
+          "sound": "D001及证据滑过桌面的声音",
+          "end_state": "证据停在B面前，B停止动作"
+        }
+      ],
+      "final_frame": "证据停在B面前，B的手静止，为下一Clip保留反应空间",
+      "stability_constraints": ["角色身份稳定", "手与证据关系正确", "动作不重复且画面不闪跳"],
+      "prompt_version": "v1",
+      "status": "planned",
+      "actual_end_state": null,
+      "accepted_source": null
+    }
+  ]
+}

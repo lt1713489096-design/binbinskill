@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{TITLE}}</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0f1115;--panel:#171a21;--line:#303642;--text:#edf1f7;--muted:#aeb7c5;--accent:#69a7ff}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 system-ui,"Microsoft YaHei",sans-serif}
+    main{max-width:1500px;margin:auto;padding:24px}h1{margin:0 0 4px;font-size:28px}h2{margin:28px 0 10px;font-size:19px;color:#dbe8ff}
+    .meta{color:var(--muted);margin-bottom:18px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}.card b{display:block;color:var(--accent);font-size:12px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:850px;background:var(--panel)}
+    th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;white-space:normal;overflow-wrap:anywhere}th{position:sticky;top:0;background:#202530;color:#cfe0ff}
+    code{white-space:pre-wrap;overflow-wrap:anywhere}.status{display:inline-block;padding:2px 7px;border-radius:999px;background:#283244;color:#cfe0ff}
+    @media(max-width:700px){main{padding:14px}h1{font-size:22px}.cards{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <h1>{{TITLE}}</h1>
+  <div class="meta">生成时间：{{GENERATED_AT}}</div>
+  {{CONTENT}}
+</main>
+</body>
+</html>

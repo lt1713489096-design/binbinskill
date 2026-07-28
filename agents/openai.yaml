@@ -1,0 +1,6 @@
+interface:
+  display_name: "binbinskill"
+  short_description: "把故事变成可追踪、可生成、可复盘的AI漫剧生产项目"
+  default_prompt: "Use $binbinskill to turn this story into a validated Beat/Shot/Clip/Asset comic-drama project with restrained key-image prompts, video prompts, continuity review, and targeted image repair."
+policy:
+  allow_implicit_invocation: true
